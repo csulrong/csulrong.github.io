@@ -13,15 +13,15 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Liang Rong
-email: your-email@domain.com
+title: 荣亮的个人主页
+email: csulrong@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  Good artists copy, great artists steal.
+  能工摹形，巧匠窃意。
 
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username:  jekyll
+# baseurl: "" # the subpath of your site, e.g. /blog
+# url: "" # the base hostname & protocol for your site, e.g. http://example.com
+# twitter_username: jekyllrb
+# github_username:  csulrong
 
 # Build settings
 markdown: kramdown
@@ -31,3 +31,14 @@ gems:
 exclude:
   - Gemfile
   - Gemfile.lock
+
+encoding: utf-8
+timezone: Asia/Shanghai
+future: true
+
+defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+    values:
+      layout: "default"
