@@ -45,6 +45,8 @@ logo: /img/logo-2x.png
 
 encoding: utf-8
 
+excerpt_separator: '<!-- more -->'
+
 gems:
   - jekyll-avatar
   - jekyll-feed
