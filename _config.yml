@@ -1,14 +1,14 @@
 markdown: kramdown
 highlighter: rouge
 
-gauges_id: 503c5af6613f5d0f19000027
-google_analytics_id: UA-50755011-1
-google_site_verification: onQcXpAvtHBrUI5LlroHNE_FP0b2qvFyPq7VZw36iEY
+# gauges_id: 503c5af6613f5d0f19000027
+# google_analytics_id: UA-50755011-1
+# google_site_verification: onQcXpAvtHBrUI5LlroHNE_FP0b2qvFyPq7VZw36iEY
 
-repository: https://github.com/jekyll/jekyll
+repository: https://github.com/csulrong/csulrong.github.io
 help_url: https://github.com/jekyll/jekyll-help
 
-timezone: America/Los_Angeles
+timezone: Asia/Shanghai
 
 defaults:
   -
@@ -35,14 +35,16 @@ collections:
   tutorials:
     output: true
 
-name: Jekyll • Simple, blog-aware, static sites
-description: Transform your plain text into static websites and blogs
-url: https://jekyllrb.com
+name: 欢迎来到荣亮的个人主页
+description: 能工摹形，巧匠窃意。
+url: https://csulrong.github.io
 
 twitter:
-  username: jekyllrb
+  username: csulrong
 
 logo: /img/logo-2x.png
+
+encoding: utf-8
 
 gems:
   - jekyll-avatar
