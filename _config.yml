@@ -1,1 +1,9 @@
+title: 荣亮的个人主页
+email: csulrong@gmail.com
+description: >
+  能工摹形，巧匠窃意。
+
 theme: jekyll-theme-architect
+
+markdown: kramdown
+encoding: utf-8
