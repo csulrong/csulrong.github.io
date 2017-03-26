@@ -3,16 +3,16 @@
     <a href="/">回到主页</a>
   </li>
   <li class="{% if page.url contains '/docs/' %}current{% endif %}">
-    <a href="/docs/home/">文章列表</a>
+    <a href="/docs/home/">资源下载</a>
   </li>
   <li class="{% if page.author %}current{% endif %}">
-    <a href="/news/">News</a>
+    <a href="/blogs/">我的博客</a>
+  </li>
+  <li class="{% if page.url contains '/help/' %}current{% endif %}">
+    <a href="/help/">我的书签</a>
   </li>
   <li class="{% if page.url contains '/community/' %}current{% endif %}">
     <a href="/community/">关于我</a>
-  </li>
-  <li class="{% if page.url contains '/help/' %}current{% endif %}">
-    <a href="/help/">友情链接</a>
   </li>
   <li>
     <a href="{{ site.repository }}">GitHub</a>
