@@ -22,7 +22,7 @@ defaults:
       path: "_posts"
       type: "posts"
     values:
-      layout: "news_item"
+      layout: "blogs_item"
 
 
 collections:
@@ -30,7 +30,7 @@ collections:
     permalink: /:collection/:path/
     output: true
   posts:
-    permalink: /news/:year/:month/:day/:title/
+    permalink: /blogs/:year/:month/:day/:title/
     output: true
   tutorials:
     output: true
