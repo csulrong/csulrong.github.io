@@ -10,6 +10,10 @@ help_url: https://github.com/jekyll/jekyll-help
 
 timezone: Asia/Shanghai
 
+paginate: 2
+paginate_path: "blogs/page:num"
+
+
 defaults:
   -
     scope:
