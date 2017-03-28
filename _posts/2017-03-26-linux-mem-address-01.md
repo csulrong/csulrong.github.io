@@ -4,6 +4,7 @@ date: 2017-03-26 08:52:53 +0800
 author: csulrong
 version: 3.4.3
 categories: [linux]
+excerpt_separator: <!-- more -->
 ---
 
 本文以80x86微处理器为例，探讨一下Linux是如何为程序员提供内存访问的。

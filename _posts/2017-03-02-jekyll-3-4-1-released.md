@@ -4,6 +4,7 @@ date: 2017-03-02 14:20:26 -0500
 author: parkr
 version: 3.4.1
 categories: [release]
+excerpt_separator: <!-- more -->
 ---
 
 Conformity is a confounding thing.
@@ -13,6 +14,8 @@ will work tomorrow, as further modifications are made to the codebase. This
 is a principle of modern software development: every change must have a
 test to guard against regressions to the functionality implemented by that
 change.
+
+<!-- more -->
 
 And yet, occasionally, our very best efforts to test functionality will be
 thwarted. This is because of how our code produces unintended

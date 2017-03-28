@@ -4,11 +4,14 @@ date: 2017-03-21 08:52:53 -0500
 author: pathawks
 version: 3.4.3
 categories: [release]
+excerpt_separator: <!-- more -->
 ---
 
 Another one-PR patch update as we continue our quest to destroy all bugs. A
 fairly technical debriefing follows, but the TLDR is that we have updated the
 `uri_escape` filter to more closely follow the pre-v3.4.0 behavior.
+
+<!-- more -->
 
 In [v3.4.0]({% link _posts/2017-01-18-jekyll-3-4-0-released.markdown %}), we
 moved away from using the deprecated

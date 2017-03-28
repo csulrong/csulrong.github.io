@@ -4,11 +4,14 @@ date: 2017-01-18 14:19:13 -0500
 author: parkr
 version: 3.4.0
 categories: [release]
+excerpt_separator: <!-- more -->
 ---
 
 Hey there! We have a quick update of Jekyll for you to enjoy this January.
 Packed full of bug fixes as usual, thanks to the tireless efforts of our
 exceptional Jekyll community. Three changes to call out:
+
+<!-- more -->
 
 1. If you're a big fan of [`where_by_exp`](/docs/templates/#filters), you'll be an
 even bigger fan of [`group_by_exp`](/docs/templates/#filters).

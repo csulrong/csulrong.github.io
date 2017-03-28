@@ -4,6 +4,7 @@ date: 2017-03-09 15:41:57 -0500
 author: parkr
 version: 3.4.2
 categories: [release]
+excerpt_separator: <!-- more -->
 ---
 
 Another one-PR patch update, though without the same [lessons as for the
@@ -11,6 +12,8 @@ previous release]({% link _posts/2017-03-02-jekyll-3-4-1-released.markdown %}).
 
 This release includes a beneficial change for a number of plugins:
 **static files now respect front matter defaults**.
+
+<!-- more -->
 
 You might be asking yourself: "why would static files, files that are
 static files explicitly because they *don't* have YAML front matter, want
