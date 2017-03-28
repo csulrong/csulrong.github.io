@@ -13,14 +13,6 @@ fairly technical debriefing follows, but the TLDR is that we have updated the
 
 <!-- more -->
 
-In [v3.4.0]({% link _posts/2017-01-18-jekyll-3-4-0-released.markdown %}), we
-moved away from using the deprecated
-[`URI.escape`](https://ruby-doc.org/stdlib-2.3.0/libdoc/uri/rdoc/URI/Escape.html#method-i-encode)
-in favor of
-[`Addressable::URI.encode`](http://www.rubydoc.info/gems/addressable/Addressable/URI#encode-class_method).
-This is what powers our [`uri_escape`
-filter](https://jekyllrb.com/docs/templates/).
-
 While this transition was mostly a smooth one, the two methods are not
 identical. While `URI.escape` was happy to escape any string,
 `Addressable::URI.encode` first turns the string into an `Addressable::URI`

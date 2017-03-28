@@ -54,11 +54,10 @@ excerpt_separator: '<!-- more -->'
 gems:
   - jekyll-avatar
   - jekyll-feed
-  - jekyll-mentions
   - jekyll-redirect-from
   - jekyll-seo-tag
   - jekyll-sitemap
-  - jemoji
+  - jekyll-paginate
 
 exclude:
   - .gitignore
