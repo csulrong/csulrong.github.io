@@ -11,7 +11,7 @@ help_url: https://github.com/jekyll/jekyll-help
 timezone: Asia/Shanghai
 
 paginate: 2
-paginate_path: "blogs/page:num"
+paginate_path: "/blogs/page:num"
 
 # 设置YAML头信息的默认值
 defaults:
