@@ -24,8 +24,7 @@ author: all
     {% if page == paginator.page %}
       <em>{{ page }}</em>
     {% elsif page == 1 %}
-    <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: 'page:num', '' }}">{{ page }}</a>
-  {% endif %}{{ page }}</a>
+      <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: 'page:num', '' }}">{{ page }}</a>
     {% else %}
       <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
     {% endif %}
