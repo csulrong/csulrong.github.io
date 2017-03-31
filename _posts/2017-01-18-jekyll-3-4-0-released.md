@@ -4,6 +4,7 @@ date: 2017-01-18 14:19:13 -0500
 author: parkr
 version: 3.4.0
 categories: [release]
+tags: [Jekyll]
 excerpt_separator: <!-- more -->
 ---
 

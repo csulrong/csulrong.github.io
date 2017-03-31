@@ -21,13 +21,19 @@
     </ul>
     <h4>标签分类</h4>
     <ul>
-        {% for post in site.posts %}
+        {% for tag in site.tags %}
+        <li class="tag">
+          <a href="{{ site.baseurl }}/tags/{{ tag[0] }}/">{{ tag[0] }}</a>
+        </li>
+        {% endfor %}
+
+        <!-- {% for post in site.posts %}
         {% unless post.categories contains 'release' %}
         <li class="{% if page.title == post.title %}current{% endif %}">
           <a href="{{ post.url }}">{{ post.title }}</a>
         </li>
         {% endunless %}
-        {% endfor %}
+        {% endfor %} -->
     </ul>
   </aside>
 </div>

@@ -4,6 +4,7 @@ date: 2017-03-26 08:52:53 +0800
 author: csulrong
 version: 3.4.3
 categories: [linux]
+tags: [Linux]
 excerpt_separator: <!-- more -->
 ---
 
