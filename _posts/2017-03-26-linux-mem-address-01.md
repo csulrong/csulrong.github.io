@@ -21,7 +21,7 @@ excerpt_separator: <!-- more -->
 `逻辑地址`到`物理地址`的转换，需要经过内存控制单元(MMU)的`分段单元`和`分页单元`的硬件电路(如下图)。
 
 {: .align-center}
-![从逻辑地址到物理地址的转换过程]({{ site.baseurl }}/assets/images/2017/地址转换.svg)
+![从逻辑地址到物理地址的转换过程]({{ site.baseurl }}/assets/images/2017/transform_address.svg)
 
 ### x86微处理器中的分段
 
@@ -31,7 +31,7 @@ excerpt_separator: <!-- more -->
 - `偏移量`: 相对于段起始地址的偏移量，长度为32bit。
 
 {: .align-center}
-![段选择符]({{ site.baseurl }}/assets/images/2017/段选择符.svg)
+![段选择符]({{ site.baseurl }}/assets/images/2017/segment_selector.svg)
 
 CPU提供段寄存器用于存放段选择符，这些段寄存器有6个：`cs(代码段寄存器)`、`ss(栈段寄存器)`、`ds(数据段寄存器)`、`es(附加数据段寄存器)`、`fs`和`gs`。`cs`寄存器还包含一个2bit的字段，用于指明CPU的`当前特权级别(Current Privilege Level, CPL)`，值为0代表最高优先级，值为3代表最低优先级。Linux只使用了0级和3级，分别对应`内核态`和`用户态`。
 
@@ -44,7 +44,7 @@ CPU提供段寄存器用于存放段选择符，这些段寄存器有6个：`cs(
 段描述符的格式见下图：
 
 {: .align-center}
-![数据段描述符和代码段描述符的格式]({{ site.baseurl }}/assets/images/2017/段描述符格式.svg)
+![数据段描述符和代码段描述符的格式]({{ site.baseurl }}/assets/images/2017/segment_descriptor.svg)
 
 数据段描述符和代码段描述符的格式基本类似，以下是对其中一些重要字段的说明：
 
@@ -145,7 +145,7 @@ CPU提供段寄存器用于存放段选择符，这些段寄存器有6个：`cs(
 有了以上这些对段的基本概念的说明之后，我们来看看逻辑地址是如何转换到线性地址的(见下图)。
 
 {: .align-center}
-![逻辑地址到线性地址的转换]({{ site.baseurl }}/assets/images/2017/逻辑地址的转换.svg)
+![逻辑地址到线性地址的转换]({{ site.baseurl }}/assets/images/2017/logical2linear_address.svg)
 
 - 首先，从段寄存器中获取段选择符
 - 检查段选择符中的TI字段，决定是从GDT中还是从LDT中读取段描述符，GDT和LDT的起始地址分别存于gdtr和ldtr寄存器中
@@ -174,7 +174,7 @@ CPU提供段寄存器用于存放段选择符，这些段寄存器有6个：`cs(
 </div>
 
 {: .align-center}
-![80x86处理器的分页]({{site.baseurl}}/assets/images/2017/线性地址的分页转换.svg)
+![80x86处理器的分页]({{site.baseurl}}/assets/images/2017/linear2real_address.svg)
 
 每个活动进程必须有一个分配给它的页目录，不过只有在进程实际需要一个页表的时候才会给该页表分配RAM。当前正在使用的页目录表的起始地址存放在`cr3控制寄存器`中。线性地址中的`目录`字段决定页目录中的目录项，而目录项指向适当的页表。线性地址中的`页表`字段又决定页表中的表项，而表项含有页所在页框的物理地址。`偏移量`字段决定页框内的相对位置，由于它的长度是12位，故每一页含有4KB字节的数据。
 
@@ -293,5 +293,5 @@ CPU提供段寄存器用于存放段选择符，这些段寄存器有6个：`cs(
 -----------------
 
 <div>
-<a href="{% post_url 2017-04-09-linux-mem-address-02 %}">内存寻址(2): X86微处理器的分页单元的高级特性</a>
+<a href="{% post_url 2017-04-09-linux-mem-address-02 %}">内存寻址(2): X86微处理器的分页单元的高级话题</a>
 </div>

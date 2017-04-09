@@ -1,5 +1,5 @@
 ---
-title: '内存寻址(2): X86微处理器的分页单元的高级特性'
+title: '内存寻址(2): X86微处理器的分页单元的高级话题'
 date: 2017-04-09 15:54:00 +0800
 author: csulrong
 version: 3.4.3
@@ -17,7 +17,7 @@ excerpt_separator: <!-- more -->
 从Pentium开始，80x86微处理器引入了`扩展分页(extended paging)`，它允许页框大小为4MB而不是4KB(如下图)。
 
 {: .align-center}
-![扩展分页]({{ site.baseurl }}/assets/images/扩展分页.svg)
+![扩展分页]({{site.baseurl}}/assets/images/2017/extended_paging.svg)
 
 如前所述，通过设置页目录项中的Page Size标志启用扩展分页功能。在这种情况下，分页单元把32位线性地址分成`目录`(最高10位)和`偏移量`(其余22位)两个字段。
 
