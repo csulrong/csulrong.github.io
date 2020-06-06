@@ -10,7 +10,7 @@ excerpt_separator: <!-- more -->
 
 Linux有丰富的虚拟化网络功能，当你在Linux系统中执行`ip link help`命令的时候，就会发现Linux支持很多种类型的虚拟网络接口，这些虚拟网络接口把虚拟机、容器以及裸金属宿主机互联起来，为云计算网络虚拟环境提供了技术支撑。本文重点介绍Linux中各种常用的虚拟网络接口，为在网络虚拟化领域学习和工作的同行们提供参考。
 
-<!--more-->
+<!-- more -->
 
 本文重点介绍以下几种常用的虚拟网络接口：
 - 虚拟网桥：bridge
@@ -23,7 +23,6 @@ Linux有丰富的虚拟化网络功能，当你在Linux系统中执行`ip link h
 - dummy
 - nlmon
 - netdevsim
-
 
 ## 虚拟网桥 (bridge)
 
@@ -81,6 +80,32 @@ VLAN通过在数据帧上加标签的方式，将一个物理局域网在逻辑�
 
 {: .align-center}
 ![数据帧的VLAN封装格式]({{ site.baseurl }}/assets/images/2020/vlan.svg)
+
+
+### vlan
+当需要对虚拟机、容器或者主机进行子网划分时，可以使用VLAN。创建VLAN如下：
+
+{% highlight bash %}
+vconfig add eth0 2
+ip link set eth0.2 up
+vconfig add eth0 3
+ip link set eth0.3 up
+{% endhighlight %}
+
+以上命令创建了名为`eth0.2`的VLAN 2和名为`eth0.3`的VLAN 3。拓扑图如下：
+
+{: .align-center}
+![vlan虚拟接口]({{ site.baseurl }}/assets/images/2020/vlan-interface.svg)
+
+### macvlan
+
+使用VLAN，可以在单个接口上创建多个虚拟接口，通过VLAN tag对数据包进行过滤。使用MACVLAN，可以在单个接口上创建多个虚拟接口，这些虚拟接口都有自己的MAC地址。
+
+在不用MACVLAN时，如果要把虚拟机或者网络命名空间连接到物理网络，需要创建TAP或者veth设备，并且附加到Linux bridge上，同时，需要把物理接口接到bridge上用来连接到物理网络。但是，使用MACVLAN之后，网络命名空间就可以直接通过MACVLAN绑定到物理接口，而无需bridge。如下图所示。
+
+{: .align-center}
+![macvlan]({{ site.baseurl }}/assets/images/2020/macvlan.svg)
+
 
 
 ## 参考文献
