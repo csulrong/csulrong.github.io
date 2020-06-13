@@ -42,7 +42,7 @@ ip link set veth1 master br0
 {% endhighlight %}
 
 <div class="note info">
-  <p>也可以使用<code>bridge-utils</code>包中<code>brctl</code>命令创建和管理虚拟网桥。</p>
+  <p>通常，也可以使用<code>bridge-utils</code>包中<code>brctl</code>命令创建和管理虚拟网桥。</p>
 </div>
 
 ## 接口捆绑：bonded和team
