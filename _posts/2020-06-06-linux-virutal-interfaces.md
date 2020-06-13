@@ -95,7 +95,7 @@ ip link set eth0.3 up
 以上命令创建了名为`eth0.2`的VLAN 2和名为`eth0.3`的VLAN 3。拓扑图如下：
 
 {: .align-center}
-![vlan虚拟接口]({{ site.baseurl }}/assets/images/2020/vlan-interface.svg)
+![vlan虚拟接口]({{ site.baseurl }}/assets/images/2020/vlan_interface.svg)
 
 ### macvlan
 
@@ -105,6 +105,23 @@ ip link set eth0.3 up
 
 {: .align-center}
 ![macvlan]({{ site.baseurl }}/assets/images/2020/macvlan.svg)
+
+MACVLAN有4种模式，如下图所示。
+
+![macvlan的4种模式]({{ site.baseurl }}/assets/images/2020/macvlan-modes.svg)
+
+其中，最常用的是bridge模式。以下命令创建两个bridge模式的macvlan实例，分别分配到两个不同的网络命名空间。
+
+{% highlight shell %}
+ip link add macv1 link eth0 type macvlan mode bridge
+ip link add macv2 link eth0 type macvlan mode bridge
+ip netns add net1
+ip netns add net2
+ip link set macv1 netns net1
+ip link set macv2 netns net2
+{% endhighlight %}
+
+### ipvlan
 
 
 
