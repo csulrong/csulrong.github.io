@@ -33,7 +33,7 @@ Linux bridge类似于一台网络交换机，把一台机器上的若干个物�
 
 使用下面的`ip link`命令，创建如上图所示的虚拟网桥`br0`，并将主机的物理接口`eth0`、连接虚拟机的`tap1`和`tap2`、以及网络命名空间的`veth1`虚拟接口连接到`br0`上。
 
-{% highlight bash %}
+{% highlight shell %}
 ip link add br0 type bridge
 ip link set eth0 master br0
 ip link set tap1 master br0
@@ -56,7 +56,7 @@ bonding和teaming这两个术语因为都跟接口捆绑或链路聚合有关，
 
 使用如下命令，创建一个bonded接口`bond1`，将主机上的两个物理接口`eth0`和`eth1`捆绑成一个逻辑的聚合接口，该聚合接口工作在主备模式，提供了链路的冗余和备份。
 
-{% highlight bash %}
+{% highlight shell %}
 ip link add bond1 type bond miimon 100 mode active-backup
 ip link set eth0 master bond1
 ip link set eth1 master bond1
@@ -66,7 +66,7 @@ teaming可以作为接口聚合的首选方案，因为它提供了比bonding更
 
 在下面的命令行中，使用`teamd`创建一个`team0`聚合接口，并将主机上的`eth0`和`eth1`加入到这个聚合接口。
 
-{% highlight bash %}
+{% highlight shell %}
 teamd -o -n -U -d -t team0 -c '{"runner": {"name": "loadbalance"},"link_watch": {"name": "ethtool"}}'
 ip link set eth0 down
 ip link set eth1 down
@@ -85,7 +85,7 @@ VLAN通过在数据帧上加标签的方式，将一个物理局域网在逻辑�
 ### vlan
 当需要对虚拟机、容器或者主机进行子网划分时，可以使用VLAN。创建VLAN如下：
 
-{% highlight bash %}
+{% highlight shell %}
 vconfig add eth0 2
 ip link set eth0.2 up
 vconfig add eth0 3
