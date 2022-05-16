@@ -62,3 +62,5 @@ gems:
 exclude:
   - .gitignore
   - README.md
+
+theme: jekyll-theme-minimal
