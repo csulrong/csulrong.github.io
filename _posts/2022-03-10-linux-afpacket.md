@@ -233,7 +233,7 @@ The `AF_PACKET` fanout mode enables load balancing capability for packet recepti
     </tr>
     <tr>
       <td><p><code>PACKET_FANOUT_QM</code></p></td>
-      <td><p>chedule to socket by <code>skb<code>'s recorded <code>queue_mapping<code>.</p></td>
+      <td><p>chedule to socket by <code>skb</code>'s recorded <code>queue_mapping</code>.</p></td>
     </tr>
   </tbody>
 </table>
